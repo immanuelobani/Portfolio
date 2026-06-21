@@ -1,645 +1,933 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Immanuel Obani — Data Scientist</title>
-<meta name="description" content="Transforming raw data into intelligent systems and actionable insight. Data Scientist specialising in NLP, machine learning, and advanced analytics." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Immanuel The Artist — Visual Artist & Illustrator</title>
+<meta name="description" content="Immanuel The Artist is the visual art practice of Immanuel Obani — vector illustration, digital portraiture, and concept art rooted in African culture and Afrofuturist imagination. Bradford, UK. Open for commissions."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --ink: #0d0d0d;
-    --paper: #f5f2ec;
-    --cream: #ede8df;
-    --accent: #c84b1f;
-    --accent2: #2a5298;
-    --mid: #6b6560;
-    --light: #b8b0a6;
-    --rule: #d4cfc7;
-    --card-bg: #ffffff;
-  }
+:root {
+  --ink:       #110d08;
+  --soil:      #1e150c;
+  --ember:     #b8621a;
+  --amber:     #d4883c;
+  --gold:      #e8b96a;
+  --cream:     #f5ead6;
+  --linen:     #ede1c8;
+  --parch:     #e5d3b0;
+  --dusk:      #8a6e52;
+  --mist:      #bda888;
+  --rule:      rgba(184,98,26,0.18);
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 
-  html { scroll-behavior: smooth; }
+/* ════ NAV ════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 5vw;
+  mix-blend-mode:normal;
+  transition:background 0.4s,backdrop-filter 0.4s;
+}
+nav.scrolled{
+  background:rgba(245,234,214,0.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--cream);text-decoration:none;transition:color 0.3s;
+}
+nav.scrolled .nav-logo{color:var(--ink)}
+.nav-logo span{color:var(--gold)}
+nav.scrolled .nav-logo span{color:var(--ember)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{
+  font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(245,234,214,0.7);text-decoration:none;transition:color 0.2s;
+}
+nav.scrolled .nav-links a{color:var(--dusk)}
+.nav-links a:hover{color:var(--gold)}
+nav.scrolled .nav-links a:hover{color:var(--ember)}
+.nav-cta{
+  font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;
+  padding:0.55rem 1.4rem;border:1px solid rgba(245,234,214,0.4);
+  color:var(--cream);text-decoration:none;transition:all 0.25s;
+}
+nav.scrolled .nav-cta{border-color:var(--ember);color:var(--ember)}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);color:var(--cream)}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
+/* ════ HERO ════ */
+.hero{
+  min-height:100vh;position:relative;overflow:hidden;
+  background:var(--soil);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 6vw 4rem;
+}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 5vw;
-    background: rgba(245,242,236,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem; font-weight: 900;
-    color: var(--ink); text-decoration: none;
-    letter-spacing: -0.02em;
-  }
-  .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--mid);
-    text-decoration: none; transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 0.55rem 1.4rem;
-    background: var(--ink); color: var(--paper);
-    text-decoration: none; transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--accent); }
+/* grain texture via SVG filter */
+.hero-grain{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity:0.6;
+}
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 5rem;
-    overflow: hidden;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 6rem 5vw 6rem 8vw;
-    position: relative;
-  }
-  .hero-eyebrow {
-    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block; width: 2rem; height: 1px; background: var(--accent);
-  }
-  .hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.6rem, 5vw, 4.2rem);
-    font-weight: 900; line-height: 1.08;
-    letter-spacing: -0.03em; color: var(--ink);
-    margin-bottom: 1.75rem;
-  }
-  .hero-headline em {
-    font-style: italic; color: var(--accent);
-  }
-  .hero-sub {
-    font-size: 1.05rem; line-height: 1.7;
-    color: var(--mid); max-width: 42ch;
-    margin-bottom: 2.5rem;
-  }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    padding: 0.85rem 2rem; background: var(--ink); color: var(--paper);
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: var(--accent); }
-  .btn-outline {
-    padding: 0.85rem 2rem; border: 1.5px solid var(--ink); color: var(--ink);
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; text-decoration: none;
-    transition: all 0.2s;
-  }
-  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+/* warm gradient washes */
+.hero-wash{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 90%, rgba(184,98,26,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 70% at 85% 10%, rgba(30,21,12,0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 70% 75%, rgba(212,136,60,0.1) 0%, transparent 50%);
+}
 
-  .hero-right {
-    position: relative; overflow: hidden;
-    background: var(--ink);
-  }
-  .hero-right-inner {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-  }
-  /* decorative data-viz background */
-  .hero-graphic {
-    width: 100%; height: 100%;
-    opacity: 0.08;
-  }
-  .hero-stat-block {
-    position: absolute; bottom: 3rem; left: 3rem; right: 3rem;
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: rgba(255,255,255,0.12);
-  }
-  .hero-stat {
-    padding: 1.5rem 1rem;
-    background: rgba(13,13,13,0.85);
-    text-align: center;
-  }
-  .hero-stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700; color: var(--paper);
-    display: block;
-  }
-  .hero-stat-label {
-    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--light); margin-top: 0.3rem; display: block;
-  }
-  .hero-img-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, #0d0d0d 0%, #1a2a4a 60%, #0d0d0d 100%);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .monogram {
-    font-family: 'Playfair Display', serif;
-    font-size: 18rem; font-weight: 900;
-    color: rgba(255,255,255,0.04);
-    user-select: none; line-height: 1;
-    position: absolute;
-  }
-  .hero-badge {
-    position: absolute; top: 2.5rem; right: 2.5rem;
-    width: 7rem; height: 7rem;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-  }
-  .hero-badge span:first-child {
-    font-size: 0.62rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--light);
-    line-height: 1.3;
-  }
-  .hero-badge span:last-child {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; color: var(--paper);
-  }
+/* floating SVG ornament — top right */
+.hero-ornament{
+  position:absolute;top:8rem;right:6vw;z-index:2;
+  width:clamp(180px,22vw,340px);opacity:0.18;
+  pointer-events:none;
+}
 
-  /* ── MARQUEE ── */
-  .marquee-track {
-    background: var(--accent); color: var(--paper);
-    padding: 0.8rem 0; overflow: hidden; white-space: nowrap;
-  }
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 28s linear infinite;
-  }
-  .marquee-inner span {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; padding: 0 2.5rem;
-  }
-  .marquee-inner span::after {
-    content: '✦'; margin-left: 2.5rem; opacity: 0.6;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+.hero-content{position:relative;z-index:3;padding-top:8rem}
 
-  /* ── SECTION COMMONS ── */
-  section { padding: 6rem 8vw; }
-  .section-label {
-    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .section-label::before {
-    content: ''; display: block; width: 2rem; height: 1px; background: var(--accent);
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    font-weight: 800; letter-spacing: -0.02em;
-    line-height: 1.15; margin-bottom: 1rem;
-  }
-  .section-desc {
-    font-size: 1rem; color: var(--mid); max-width: 60ch; line-height: 1.7;
-  }
-  hr.divider {
-    border: none; border-top: 1px solid var(--rule); margin: 0;
-  }
+.hero-kicker{
+  font-size:0.65rem;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:2.2rem;
+  display:flex;align-items:center;gap:0.9rem;
+}
+.hero-kicker::before{content:'';display:block;width:2.5rem;height:1px;background:var(--amber);opacity:0.7}
 
-  /* ── EXPERTISE ── */
-  .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1px; background: var(--rule);
-    margin-top: 3.5rem;
-    border: 1px solid var(--rule);
-  }
-  .expertise-card {
-    background: var(--card-bg);
-    padding: 2.5rem 2rem;
-    transition: background 0.2s;
-    cursor: default;
-  }
-  .expertise-card:hover { background: var(--ink); }
-  .expertise-card:hover .card-title,
-  .expertise-card:hover .card-desc,
-  .expertise-card:hover .card-icon { color: var(--paper); }
-  .card-icon {
-    font-size: 1.8rem; margin-bottom: 1.25rem;
-    display: block; transition: color 0.2s;
-  }
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; font-weight: 700;
-    margin-bottom: 0.75rem; transition: color 0.2s;
-  }
-  .card-desc {
-    font-size: 0.9rem; color: var(--mid);
-    line-height: 1.65; transition: color 0.2s;
-  }
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;font-style:italic;
+  font-size:clamp(3.5rem,9.5vw,10rem);
+  line-height:0.9;letter-spacing:-0.03em;
+  color:var(--cream);
+  display:block;position:relative;
+}
+.hero-name-line2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;font-style:normal;
+  font-size:clamp(1.8rem,4vw,4.2rem);
+  line-height:1;letter-spacing:0.05em;
+  color:var(--amber);
+  display:block;margin-top:0.25em;text-transform:uppercase;
+}
 
-  /* ── ABOUT STRIP ── */
-  .about-strip {
-    background: var(--ink); color: var(--paper);
-    padding: 6rem 8vw;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: center;
-  }
-  .about-strip .section-label { color: #c84b1f; }
-  .about-strip .section-label::before { background: #c84b1f; }
-  .about-strip .section-title { color: var(--paper); }
-  .about-strip p {
-    font-size: 1rem; color: rgba(245,242,236,0.7); line-height: 1.75;
-    margin-bottom: 1.25rem;
-  }
-  .about-strip .btn-outline {
-    border-color: rgba(255,255,255,0.3); color: var(--paper);
-  }
-  .about-strip .btn-outline:hover {
-    background: var(--paper); color: var(--ink);
-  }
-  .skills-list {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
-    margin-top: 1rem;
-  }
-  .skill-tag {
-    font-size: 0.78rem; letter-spacing: 0.06em;
-    padding: 0.5rem 0.9rem;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(245,242,236,0.8);
-  }
+/* ochre brushstroke under name */
+.hero-stroke{display:block;width:100%;max-width:900px;margin-top:0.6rem}
 
-  /* ── INSIGHTS ── */
-  .insights { background: var(--cream); }
-  .insights-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 3rem;
-  }
-  .insights-link {
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--accent);
-    text-decoration: none; border-bottom: 1px solid var(--accent);
-    padding-bottom: 2px;
-  }
-  .blog-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1px; background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-  .blog-card {
-    background: var(--paper); padding: 2.5rem 2rem;
-    display: flex; flex-direction: column;
-    transition: background 0.2s;
-  }
-  .blog-card:hover { background: var(--card-bg); }
-  .blog-tag {
-    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--accent); font-weight: 500; margin-bottom: 1rem;
-  }
-  .blog-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; font-weight: 700;
-    line-height: 1.35; margin-bottom: 0.75rem; flex: 1;
-  }
-  .blog-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.6; margin-bottom: 1.5rem; }
-  .blog-read {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--ink);
-    text-decoration: none; display: flex; align-items: center; gap: 0.5rem;
-  }
-  .blog-read::after { content: '→'; }
+.hero-body{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  margin-top:4rem;padding-top:2.5rem;
+  border-top:1px solid rgba(245,234,214,0.08);
+  align-items:end;
+}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.15rem,2vw,1.6rem);font-weight:300;font-style:italic;
+  color:rgba(245,234,214,0.55);line-height:1.65;max-width:44ch;
+}
+.hero-tagline em{color:var(--amber);font-style:normal}
+.hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:1.25rem}
+.hero-actions{display:flex;gap:0.85rem;flex-wrap:wrap;justify-content:flex-end}
+.hero-location{
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(245,234,214,0.28);
+}
 
-  /* ── CTA ── */
-  .cta-section {
-    padding: 6rem 8vw;
-    background: var(--paper);
-  }
-  .cta-inner {
-    border: 1px solid var(--rule);
-    padding: 4rem;
-    display: grid; grid-template-columns: 1fr auto;
-    gap: 3rem; align-items: center;
-  }
-  .cta-inner .section-title { margin-bottom: 0.5rem; }
-  .cta-inner p { font-size: 1rem; color: var(--mid); line-height: 1.6; }
-  .cta-buttons { display: flex; flex-direction: column; gap: 1rem; min-width: 200px; }
+.btn-primary{
+  padding:0.85rem 2.2rem;background:var(--amber);color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,transform 0.15s;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--gold);transform:translateY(-1px)}
+.btn-outline{
+  padding:0.85rem 2.2rem;
+  border:1px solid rgba(245,234,214,0.25);color:rgba(245,234,214,0.75);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;display:inline-block;
+}
+.btn-outline:hover{border-color:var(--amber);color:var(--amber)}
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink); color: var(--paper);
-    padding: 4rem 8vw 2.5rem;
-  }
-  .footer-top {
-    display: grid; grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem; padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 2rem;
-  }
-  .footer-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem;
-  }
-  .footer-brand span { color: var(--accent); }
-  .footer-tagline {
-    font-size: 0.9rem; color: rgba(245,242,236,0.5);
-    line-height: 1.65; max-width: 36ch; margin-bottom: 1.5rem;
-  }
-  .footer-socials { display: flex; gap: 1rem; }
-  .footer-socials a {
-    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(245,242,236,0.5); text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 0.4rem 0.8rem; transition: all 0.2s;
-  }
-  .footer-socials a:hover { color: var(--paper); border-color: var(--paper); }
-  .footer-col h4 {
-    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(245,242,236,0.4); margin-bottom: 1.25rem;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 0.65rem; }
-  .footer-col ul a {
-    font-size: 0.9rem; color: rgba(245,242,236,0.65);
-    text-decoration: none; transition: color 0.2s;
-  }
-  .footer-col ul a:hover { color: var(--paper); }
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.78rem; color: rgba(245,242,236,0.3);
-  }
+/* scroll hint */
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+}
+.scroll-hint span{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,234,214,0.25)}
+.scroll-line{width:1px;height:3rem;background:linear-gradient(to bottom,rgba(245,234,214,0.2),transparent)}
 
-  /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0; transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+/* ════ INTRO BAND ════ */
+.intro-band{
+  background:var(--ink);
+  padding:1.5rem 6vw;
+  display:flex;align-items:center;gap:4rem;overflow:hidden;
+  border-top:1px solid rgba(184,98,26,0.3);
+}
+.intro-band-item{
+  display:flex;align-items:center;gap:1rem;white-space:nowrap;flex-shrink:0;
+}
+.ib-dot{width:4px;height:4px;border-radius:50%;background:var(--ember)}
+.ib-text{
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(245,234,214,0.35);
+}
+.ib-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:600;color:var(--amber);margin-left:0.5rem;
+}
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-right { min-height: 40vh; }
-    .about-strip { grid-template-columns: 1fr; gap: 2.5rem; }
-    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-    .cta-inner { grid-template-columns: 1fr; }
-    .hero-left { padding: 5rem 5vw 3rem; }
-    section { padding: 4rem 5vw; }
-    .cta-inner { padding: 2.5rem; }
-    .about-strip { padding: 4rem 5vw; }
-    .insights-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    nav { padding: 1rem 5vw; }
-    .nav-links { display: none; }
-  }
+/* ════ ABOUT ════ */
+.about-sec{
+  padding:8rem 6vw;
+  display:grid;grid-template-columns:5fr 4fr;gap:8rem;
+  background:var(--cream);
+}
+.about-label{
+  font-size:0.62rem;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--ember);margin-bottom:2rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.about-label::before{content:'';display:block;width:2rem;height:1px;background:var(--ember)}
+.about-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4.5vw,4rem);font-weight:600;line-height:1.1;
+  letter-spacing:-0.02em;color:var(--ink);margin-bottom:2rem;
+}
+.about-heading em{font-style:italic;color:var(--ember)}
+.about-text{font-size:1rem;line-height:1.9;color:var(--dusk);max-width:58ch;margin-bottom:1.25rem}
+.about-links{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem}
+.about-link{
+  font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--ember);text-decoration:none;
+  display:flex;align-items:center;gap:0.4rem;
+  border-bottom:1px solid rgba(184,98,26,0.3);padding-bottom:2px;
+  transition:border-color 0.2s,color 0.2s;
+}
+.about-link::after{content:'↗';font-size:0.8em;transition:transform 0.2s}
+.about-link:hover{border-color:var(--ember);color:var(--soil)}
+.about-link:hover::after{transform:translate(2px,-2px)}
+
+.about-right{padding-top:0.5rem}
+.about-pull{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:300;font-style:italic;
+  color:var(--ink);line-height:1.6;
+  border-left:2px solid var(--ember);padding-left:1.75rem;
+  margin-bottom:2.5rem;
+}
+.about-detail{font-size:0.88rem;line-height:1.9;color:var(--dusk);margin-bottom:1rem}
+.about-detail strong{color:var(--soil);font-weight:500}
+
+/* ════ GALLERY ════ */
+.gallery-sec{
+  background:var(--ink);
+  padding:6rem 6vw;
+}
+.sec-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem;
+}
+.sec-label-dark{
+  font-size:0.62rem;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:0.75rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.sec-label-dark::before{content:'';display:block;width:2rem;height:1px;background:var(--amber)}
+.sec-heading-dark{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3.5rem);font-weight:600;line-height:1.1;
+  letter-spacing:-0.02em;color:var(--cream);
+}
+.sec-heading-dark em{font-style:italic;color:var(--amber)}
+
+/* Masonry-style gallery */
+.gallery-masonry{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:80px;
+  gap:8px;
+}
+.g-item{
+  position:relative;overflow:hidden;
+  background:var(--soil);
+  display:block;text-decoration:none;
+  cursor:pointer;
+}
+.g-item img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94),
+             filter 0.4s ease;
+  filter:saturate(0.85) brightness(0.95);
+}
+.g-item:hover img{transform:scale(1.07);filter:saturate(1.1) brightness(1.02)}
+
+.g-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(17,13,8,0.92) 0%,rgba(17,13,8,0.2) 50%,transparent 100%);
+  opacity:0;transition:opacity 0.38s ease;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem 1.25rem;
+}
+.g-item:hover .g-overlay{opacity:1}
+.g-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:600;font-style:italic;
+  color:var(--cream);line-height:1.3;margin-bottom:0.3rem;
+  transform:translateY(6px);transition:transform 0.35s ease;
+}
+.g-item:hover .g-title{transform:translateY(0)}
+.g-tag{
+  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--amber);
+  transform:translateY(6px);transition:transform 0.4s ease 0.04s;
+}
+.g-item:hover .g-tag{transform:translateY(0)}
+
+/* Grid positions — intentional asymmetry */
+.g1{grid-column:1/8;grid-row:1/5}   /* tall wide — featured */
+.g2{grid-column:8/13;grid-row:1/4}  /* wide medium */
+.g3{grid-column:8/11;grid-row:4/7}  /* small */
+.g4{grid-column:11/13;grid-row:4/7} /* small */
+.g5{grid-column:1/5;grid-row:5/8}   /* medium */
+.g6{grid-column:5/9;grid-row:5/8}   /* medium */
+.g7{grid-column:9/13;grid-row:7/10} /* medium */
+.g8{grid-column:1/6;grid-row:8/11}  /* wide */
+.g9{grid-column:6/9;grid-row:8/11}  /* medium */
+
+.gallery-footer{
+  margin-top:2.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+  padding-top:2rem;border-top:1px solid rgba(184,98,26,0.15);
+}
+.gallery-footer p{font-size:0.85rem;color:rgba(245,234,214,0.35);max-width:48ch;line-height:1.7}
+
+.btn-warm{
+  padding:0.85rem 2.2rem;background:var(--amber);color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;display:inline-block;
+}
+.btn-warm:hover{background:var(--gold)}
+
+/* ════ PROCESS ════ */
+.process-sec{
+  background:var(--linen);padding:8rem 6vw;
+  position:relative;overflow:hidden;
+}
+.process-sec::before{
+  content:'';position:absolute;
+  right:-8rem;top:-8rem;width:40rem;height:40rem;
+  border-radius:50%;
+  border:1px solid rgba(184,98,26,0.07);
+  pointer-events:none;
+}
+.process-sec::after{
+  content:'';position:absolute;
+  right:-4rem;top:-4rem;width:28rem;height:28rem;
+  border-radius:50%;
+  border:1px solid rgba(184,98,26,0.1);
+  pointer-events:none;
+}
+.process-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:1px;background:var(--rule);
+  border:1px solid var(--rule);
+  margin-top:4rem;
+}
+.process-card{
+  background:var(--linen);padding:3rem 2.25rem;
+  position:relative;overflow:hidden;
+  transition:background 0.3s;
+}
+.process-card:hover{background:var(--cream)}
+.process-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:6rem;font-weight:700;
+  color:rgba(184,98,26,0.07);
+  line-height:1;display:block;margin-bottom:1.5rem;
+  user-select:none;
+}
+.process-medium{
+  font-size:0.6rem;font-weight:500;letter-spacing:0.26em;text-transform:uppercase;
+  color:var(--ember);margin-bottom:0.8rem;display:block;
+}
+.process-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;font-weight:600;color:var(--ink);
+  line-height:1.3;margin-bottom:1rem;
+}
+.process-desc{font-size:0.87rem;line-height:1.85;color:var(--dusk)}
+.process-bar{
+  position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--ember);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.process-card:hover .process-bar{transform:scaleX(1)}
+
+/* ════ STATEMENT ════ */
+.statement-sec{
+  background:var(--soil);
+  padding:9rem 6vw;
+  position:relative;overflow:hidden;
+}
+.statement-ornament-left{
+  position:absolute;left:-3rem;top:4rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:30rem;font-weight:700;font-style:italic;
+  color:rgba(212,136,60,0.04);line-height:1;
+  user-select:none;pointer-events:none;
+}
+.statement-ornament-right{
+  position:absolute;right:-2rem;bottom:-2rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:20rem;font-weight:700;
+  color:rgba(184,98,26,0.05);line-height:1;
+  user-select:none;pointer-events:none;
+}
+.statement-inner{
+  max-width:860px;margin:0 auto;position:relative;z-index:2;
+}
+.statement-eyebrow{
+  font-size:0.62rem;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:3rem;
+  display:flex;align-items:center;gap:0.8rem;justify-content:center;
+}
+.statement-eyebrow::before,.statement-eyebrow::after{
+  content:'';display:block;width:2rem;height:1px;background:var(--amber);
+}
+.statement-pull{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;font-style:italic;
+  color:var(--cream);line-height:1.55;text-align:center;
+  margin-bottom:4rem;
+}
+.statement-pull strong{font-style:normal;font-weight:600;color:var(--amber)}
+.statement-body{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  padding-top:3.5rem;
+  border-top:1px solid rgba(184,98,26,0.18);
+}
+.statement-p{font-size:0.92rem;line-height:1.95;color:rgba(245,234,214,0.5)}
+.statement-p strong{color:rgba(245,234,214,0.85);font-weight:500}
+
+/* ════ COMMISSIONS ════ */
+.commission-sec{
+  background:var(--cream);
+  padding:8rem 6vw;
+}
+.commission-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.commission-label{
+  font-size:0.62rem;font-weight:400;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--ember);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.commission-label::before{content:'';display:block;width:2rem;height:1px;background:var(--ember)}
+.commission-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4vw,3.5rem);font-weight:600;line-height:1.1;
+  letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem;
+}
+.commission-heading em{font-style:italic;color:var(--ember)}
+.commission-body{font-size:0.95rem;line-height:1.9;color:var(--dusk);margin-bottom:2.5rem}
+.commission-btns-left{display:flex;flex-direction:column;gap:0.85rem;max-width:320px}
+.btn-commission{
+  padding:1rem 2rem;background:var(--ember);color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s;
+  display:block;text-align:center;
+}
+.btn-commission:hover{background:var(--amber)}
+.btn-commission-ghost{
+  padding:1rem 2rem;border:1px solid rgba(184,98,26,0.3);color:var(--ember);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;
+  display:block;text-align:center;
+}
+.btn-commission-ghost:hover{border-color:var(--ember);background:rgba(184,98,26,0.05)}
+
+/* Commission info panel — right side */
+.commission-panel{
+  background:var(--ink);
+  padding:3rem;
+}
+.commission-panel-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:600;color:var(--cream);
+  margin-bottom:2rem;padding-bottom:1.25rem;
+  border-bottom:1px solid rgba(184,98,26,0.2);
+}
+.commission-row{
+  padding:1rem 0;
+  border-bottom:1px solid rgba(184,98,26,0.1);
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;
+}
+.cr-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,234,214,0.35)}
+.cr-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;color:var(--cream);text-align:right;
+}
+.cr-val.open{color:var(--amber);font-weight:600}
+
+/* Open status pulse */
+.status-dot{
+  display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--amber);margin-right:0.5rem;
+  animation:pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.4;transform:scale(0.75)}
+}
+
+/* ════ FOOTER ════ */
+footer{
+  background:var(--ink);
+  padding:5rem 6vw 2.5rem;
+  border-top:1px solid rgba(184,98,26,0.2);
+}
+.footer-main{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:5rem;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid rgba(245,234,214,0.06);
+  margin-bottom:2rem;
+}
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--cream);margin-bottom:1rem;
+}
+.footer-brand span{color:var(--amber)}
+.footer-tagline{
+  font-size:0.85rem;line-height:1.8;
+  color:rgba(245,234,214,0.3);max-width:34ch;margin-bottom:2rem;
+}
+.footer-socials{display:flex;gap:1rem;flex-wrap:wrap}
+.footer-social{
+  font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(245,234,214,0.35);text-decoration:none;
+  padding:0.4rem 0.9rem;border:1px solid rgba(245,234,214,0.1);
+  transition:all 0.2s;
+}
+.footer-social:hover{color:var(--amber);border-color:rgba(184,98,26,0.4)}
+.footer-col h5{
+  font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(245,234,214,0.25);margin-bottom:1.25rem;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:0.6rem}
+.footer-col a{
+  font-size:0.85rem;color:rgba(245,234,214,0.45);
+  text-decoration:none;transition:color 0.2s;
+}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;
+  font-size:0.65rem;color:rgba(245,234,214,0.2);
+}
+.footer-bottom a{color:rgba(245,234,214,0.3);text-decoration:none;transition:color 0.2s}
+.footer-bottom a:hover{color:rgba(245,234,214,0.7)}
+
+/* ════ ANIMATIONS ════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:1000px){
+  .gallery-masonry{grid-auto-rows:60px}
+}
+@media(max-width:860px){
+  nav{padding:1rem 5vw}
+  .nav-links{display:none}
+  .hero-body{grid-template-columns:1fr;gap:2rem}
+  .hero-right{align-items:flex-start}
+  .hero-actions{justify-content:flex-start}
+  .about-sec{grid-template-columns:1fr;gap:3rem;padding:5rem 5vw}
+  .about-right{padding-top:0}
+  .gallery-masonry{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+  .g1{grid-column:1/3;grid-row:1/2}
+  .g2{grid-column:1/3;grid-row:2/3}
+  .g3{grid-column:1/2;grid-row:3/4}
+  .g4{grid-column:2/3;grid-row:3/4}
+  .g5{grid-column:1/2;grid-row:4/5}
+  .g6{grid-column:2/3;grid-row:4/5}
+  .g7{grid-column:1/3;grid-row:5/6}
+  .g8{grid-column:1/2;grid-row:6/7}
+  .g9{grid-column:2/3;grid-row:6/7}
+  .process-grid{grid-template-columns:1fr}
+  .statement-body{grid-template-columns:1fr;gap:1.5rem}
+  .commission-wrap{grid-template-columns:1fr;gap:3rem}
+  .footer-main{grid-template-columns:1fr;gap:2.5rem}
+  .gallery-sec,.process-sec,.statement-sec,.commission-sec{padding:5rem 5vw}
+  .intro-band{overflow-x:auto;gap:2.5rem;padding:1.25rem 5vw}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:0.01ms !important;animation-duration:0.01ms !important}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Immanuel<span>.</span></a>
+<nav id="nav">
+  <a href="#" class="nav-logo">Immanuel<span> The Artist</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#insights">Insights</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#statement">Statement</a></li>
+    <li><a href="#commissions">Commissions</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <a href="#commissions" class="nav-cta">Commission a Work</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Data Scientist · Bradford, UK</div>
-    <h1 class="hero-headline">
-      Turning raw data into<br/>
-      <em>intelligent</em><br/>
-      systems.
-    </h1>
-    <p class="hero-sub">
-      MSc Big Data Science & Technology (Distinction). Building NLP pipelines, machine learning models, and analytics dashboards that drive decisions — not just reports.
+  <div class="hero-grain"></div>
+  <div class="hero-wash"></div>
+
+  <!-- Floating Afrofuturist ornament SVG -->
+  <svg class="hero-ornament" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="170" cy="170" r="169" stroke="#d4883c" stroke-width="0.5"/>
+    <circle cx="170" cy="170" r="130" stroke="#d4883c" stroke-width="0.5"/>
+    <circle cx="170" cy="170" r="90" stroke="#d4883c" stroke-width="0.5"/>
+    <circle cx="170" cy="170" r="50" stroke="#d4883c" stroke-width="1"/>
+    <line x1="170" y1="1" x2="170" y2="339" stroke="#d4883c" stroke-width="0.5"/>
+    <line x1="1" y1="170" x2="339" y2="170" stroke="#d4883c" stroke-width="0.5"/>
+    <line x1="50" y1="50" x2="290" y2="290" stroke="#d4883c" stroke-width="0.3"/>
+    <line x1="290" y1="50" x2="50" y2="290" stroke="#d4883c" stroke-width="0.3"/>
+    <polygon points="170,80 200,140 170,120 140,140" fill="none" stroke="#d4883c" stroke-width="0.8"/>
+    <polygon points="170,260 200,200 170,220 140,200" fill="none" stroke="#d4883c" stroke-width="0.8"/>
+    <circle cx="170" cy="170" r="8" fill="#d4883c" fill-opacity="0.4"/>
+    <circle cx="170" cy="80" r="3" fill="#d4883c" fill-opacity="0.6"/>
+    <circle cx="170" cy="260" r="3" fill="#d4883c" fill-opacity="0.6"/>
+    <circle cx="80" cy="170" r="3" fill="#d4883c" fill-opacity="0.6"/>
+    <circle cx="260" cy="170" r="3" fill="#d4883c" fill-opacity="0.6"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-kicker">Visual Artist · Illustrator · Bradford, UK</div>
+
+    <span class="hero-name">Immanuel</span>
+    <span class="hero-name-line2">The Artist</span>
+
+    <!-- Brushstroke SVG -->
+    <svg class="hero-stroke" viewBox="0 0 900 22" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M3 11 C60 5, 150 17, 280 9 C390 3, 510 16, 650 8 C760 2, 840 14, 897 11" stroke="#b8621a" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+      <path d="M8 15 C100 9, 240 18, 420 13 C580 8, 730 16, 893 13" stroke="#d4883c" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+      <path d="M15 9 C80 6, 180 13, 350 8" stroke="#e8b96a" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+    </svg>
+
+    <div class="hero-body">
+      <p class="hero-tagline">
+        Vector art, digital portraiture, and illustration —
+        <em>rooted in African identity, reaching toward imagined futures.</em>
+      </p>
+      <div class="hero-right">
+        <span class="hero-location">Bradford · West Yorkshire · United Kingdom</span>
+        <div class="hero-actions">
+          <a href="#work" class="btn-primary">View the Work</a>
+          <a href="https://www.instagram.com/immanueltheartist/" target="_blank" class="btn-outline">@immanueltheartist</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<div class="intro-band" aria-hidden="true">
+  <div class="intro-band-item">
+    <div class="ib-dot"></div>
+    <span class="ib-text">Medium<span class="ib-val">Vector · Digital · Procreate</span></span>
+  </div>
+  <div class="intro-band-item">
+    <div class="ib-dot"></div>
+    <span class="ib-text">Practice Since<span class="ib-val">2019</span></span>
+  </div>
+  <div class="intro-band-item">
+    <div class="ib-dot"></div>
+    <span class="ib-text">Focus<span class="ib-val">African Identity · Afrofuturism</span></span>
+  </div>
+  <div class="intro-band-item">
+    <div class="ib-dot"></div>
+    <span class="ib-text">Status<span class="ib-val">Open for Commissions</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="reveal">
+    <div class="about-label">The Artist</div>
+    <h2 class="about-heading">Immanuel Obani,<br/>working as <em>Immanuel The Artist</em></h2>
+    <p class="about-text">A visual artist and illustrator based in Bradford, West Yorkshire. The practice spans vector illustration, digital portraiture, concept art, and painting — work that draws on African cultural identity, Afrofuturist imagination, and the everyday visual world. Active since 2019, with a growing body of work across commercial illustration and personal creative projects.</p>
+    <p class="about-text">Alongside the art practice, Immanuel is a Data Scientist specialising in NLP and responsible AI. The two practices are not separate — both are concerned with representation, with whose image gets made visible, and with what imagination can do when it is given space.</p>
+    <div class="about-links">
+      <a href="https://behance.net/immanuelobani" target="_blank" class="about-link">Behance Portfolio</a>
+      <a href="https://www.instagram.com/immanueltheartist/" target="_blank" class="about-link">@immanueltheartist</a>
+      <a href="#commissions" class="about-link">Commissions</a>
+    </div>
+  </div>
+  <div class="about-right reveal reveal-delay-2">
+    <blockquote class="about-pull">
+      "AI — Big Data — Art. BSc done. MSc done. PhD — soon."
+    </blockquote>
+    <p class="about-detail">Immanuel is actively involved in Bradford's African and Caribbean communities through <strong>OAK Initiative UK CIC</strong>, <strong>Afrikindness UK</strong>, and the <strong>Bradford African Festival of Arts (BAFA)</strong> — community roots that feed directly into the cultural grounding of the work.</p>
+    <p class="about-detail">The art practice and the data science practice are two sides of the same question: <strong>who gets to be seen, and how?</strong></p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec" id="work">
+  <div class="sec-header reveal">
+    <div>
+      <div class="sec-label-dark">Selected Work</div>
+      <h2 class="sec-heading-dark">Projects on <em>Behance</em></h2>
+    </div>
+    <a href="https://behance.net/immanuelobani" target="_blank" class="btn-warm">Full Portfolio</a>
+  </div>
+
+  <div class="gallery-masonry reveal">
+    <a class="g-item g1" href="https://www.behance.net/gallery/251376785/Some-edges-arent-warnings-Theyre-invitations" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/df3cba251376785.6a34e81de6c23.jpg" alt="Some edges aren't warnings. They're invitations." loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">"Some edges aren't warnings. They're invitations."</div>
+        <div class="g-tag">Digital · 2025 · Featured</div>
+      </div>
+    </a>
+    <a class="g-item g2" href="https://www.behance.net/gallery/202669941/Digital-Portrait" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a0740c202669941.668a2f7ee7387.jpg" alt="Digital Portrait" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Digital Portrait</div>
+        <div class="g-tag">Digital · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g3" href="https://www.behance.net/gallery/202543287/Nature-Painting" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/9a97d9202543287.66879e3502e6a.jpg" alt="Nature Painting" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Nature Painting</div>
+        <div class="g-tag">Painting · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g4" href="https://www.behance.net/gallery/202099173/Home-Decor-(-Summer-time-Wallpaper-)" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/0096c0202099173.66800bfad2dd9.jpg" alt="Home Decor Summer Wallpaper" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Home Decor — Summer Wallpaper</div>
+        <div class="g-tag">Concept Art · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g5" href="https://www.behance.net/gallery/202015307/Summer-vibez" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/824d50202015307.667e7ec94dd66.jpg" alt="Summer Vibez" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Summer Vibez</div>
+        <div class="g-tag">Illustration · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g6" href="https://www.behance.net/gallery/201971811/Fire-and-Ice" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b19a47201971811.667da5a417662.jpg" alt="Fire and Ice" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Fire and Ice</div>
+        <div class="g-tag">Digital · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g7" href="https://www.behance.net/gallery/201713981/African-Concept-Home-Wallpaper" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/877732201713981.6679b115c6c47.jpg" alt="African Concept Home Wallpaper" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">African Concept Home Wallpaper</div>
+        <div class="g-tag">Concept Art · Cultural · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g8" href="https://www.behance.net/gallery/201971737/Custom-art-work" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/f4a068201971737.667da573ebd53.jpg" alt="Custom Art Work" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Custom Art Work</div>
+        <div class="g-tag">Illustration · 2024</div>
+      </div>
+    </a>
+    <a class="g-item g9" href="https://www.behance.net/gallery/201404401/Portrait-Oil-Painting-on-Procreate" target="_blank">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1f6dbf201404401.6673e535d8a5c.jpg" alt="Portrait Oil Painting on Procreate" loading="lazy"/>
+      <div class="g-overlay">
+        <div class="g-title">Portrait Oil Painting on Procreate</div>
+        <div class="g-tag">Digital Painting · 2024</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="gallery-footer reveal">
+    <p>More work on Behance — vector illustration, graphic design, custom commissions, and projects dating back to 2019.</p>
+    <a href="https://behance.net/immanuelobani" target="_blank" class="btn-warm">View Full Portfolio on Behance</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="reveal">
+    <div class="about-label">How the Work is Made</div>
+    <h2 class="about-heading">Three mediums,<br/>one practice.</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-card reveal">
+      <span class="process-num">01</span>
+      <span class="process-medium">Vector & Digital Illustration</span>
+      <div class="process-title">Building image from line</div>
+      <p class="process-desc">Vector illustration is the spine of the practice — precise, scalable, built from decisions about form rather than gesture. Every shape is deliberate, every colour choice made rather than found. The work ranges from cultural concept art to portraiture to applied design.</p>
+      <div class="process-bar"></div>
+    </div>
+    <div class="process-card reveal reveal-delay-1">
+      <span class="process-num">02</span>
+      <span class="process-medium">Digital Painting — Procreate</span>
+      <div class="process-title">Texture without the medium</div>
+      <p class="process-desc">Procreate allows the practice to move into the register of oil and acrylic painting — layering, blending, building up surface — without the physical constraints of traditional media. Portraits made this way carry the visual weight of painting while remaining fully in digital space.</p>
+      <div class="process-bar"></div>
+    </div>
+    <div class="process-card reveal reveal-delay-2">
+      <span class="process-num">03</span>
+      <span class="process-medium">Concept Art & Applied Work</span>
+      <div class="process-title">Imagination with a brief</div>
+      <p class="process-desc">Applied illustration — home décor, cultural wallpaper, graphic design, custom commissions — asks the same questions about image-making but also asks: who is this for, and where will it live? Work made for a specific person, space, or context carries a different kind of responsibility.</p>
+      <div class="process-bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-sec" id="statement">
+  <div class="statement-ornament-left" aria-hidden="true">"</div>
+  <div class="statement-ornament-right" aria-hidden="true">I</div>
+  <div class="statement-inner reveal">
+    <div class="statement-eyebrow">Artist Statement</div>
+    <p class="statement-pull">
+      I make images because images do things that words cannot — they <strong>arrive before the argument</strong>, they stay after the explanation has been forgotten, and they make room for the viewer to bring themselves in.
     </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Let's Collaborate</a>
-      <a href="#expertise" class="btn-outline">View My Work</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-img-overlay">
-      <div class="monogram">IO</div>
-      <div class="hero-badge">
-        <span>MSc<br/>Distinction</span>
-        <span>🎓</span>
-      </div>
-    </div>
-    <div class="hero-stat-block">
-      <div class="hero-stat">
-        <span class="hero-stat-num">3+</span>
-        <span class="hero-stat-label">Years Experience</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">ML</span>
-        <span class="hero-stat-label">NLP & AI</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">GCP</span>
-        <span class="hero-stat-label">AWS · BigQuery</span>
-      </div>
+    <div class="statement-body">
+      <p class="statement-p">The practice began with vector illustration and has grown to include digital portraiture, concept art, painting, and applied design. <strong>African cultural identity</strong> is the ground the work stands on — not as a theme to be explored but as the air the practice breathes.</p>
+      <p class="statement-p">I am drawn to the portrait because the face is where the personal and the political meet without either cancelling the other out. A portrait is always an argument about <strong>who deserves to be seen</strong>, made carefully, and kept.</p>
+      <p class="statement-p">I am also a Data Scientist working in NLP and responsible AI. These two practices feed each other: both are questions about <strong>representation, visibility, and what the record leaves out</strong>. The image and the algorithm are both systems for deciding what gets rendered visible.</p>
+      <p class="statement-p">The work is made in Bradford — a city with deep African and Caribbean communities whose creative production rarely gets the institutional space it deserves. That context shapes the work, <strong>even when the work travels elsewhere</strong>.</p>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-track">
-  <div class="marquee-inner">
-    <span>Python</span><span>NLP</span><span>Machine Learning</span><span>Power BI</span>
-    <span>SQL</span><span>TensorFlow</span><span>BigQuery</span><span>Tableau</span>
-    <span>LLMs</span><span>BERTopic</span><span>AWS</span><span>Scikit-learn</span>
-    <span>Python</span><span>NLP</span><span>Machine Learning</span><span>Power BI</span>
-    <span>SQL</span><span>TensorFlow</span><span>BigQuery</span><span>Tableau</span>
-    <span>LLMs</span><span>BERTopic</span><span>AWS</span><span>Scikit-learn</span>
-  </div>
-</div>
-
-<hr class="divider" />
-
-<!-- EXPERTISE -->
-<section id="expertise">
-  <div class="section-label">What I Do</div>
-  <h2 class="section-title">Areas of Expertise</h2>
-  <p class="section-desc">From exploratory analysis to production-grade ML — I bridge the gap between raw data and real business value.</p>
-
-  <div class="expertise-grid fade-up">
-    <div class="expertise-card">
-      <span class="card-icon">🧠</span>
-      <div class="card-title">NLP & Language Models</div>
-      <p class="card-desc">Topic modelling with LDA and BERTopic, sentiment analysis, text classification, and fine-tuning transformer-based LLMs for domain-specific tasks.</p>
+<!-- COMMISSIONS -->
+<section class="commission-sec" id="commissions">
+  <div class="commission-wrap">
+    <div class="reveal">
+      <div class="commission-label">Work With Me</div>
+      <h2 class="commission-heading">Commissions &amp;<br/><em>Exhibition Proposals</em></h2>
+      <p class="commission-body">Open for custom illustration commissions, digital portraits, concept art, and graphic design work. Whether it's a personal portrait, a cultural piece, or a commercial brief — get in touch and we can discuss what the work needs to be.</p>
+      <div class="commission-btns-left">
+        <a href="mailto:immanuelobani@gmail.com" class="btn-commission">Send an Enquiry</a>
+        <a href="https://behance.net/immanuelobani" target="_blank" class="btn-commission-ghost">View Portfolio on Behance</a>
+        <a href="https://www.instagram.com/immanueltheartist/" target="_blank" class="btn-commission-ghost">@immanueltheartist on Instagram</a>
+      </div>
     </div>
-    <div class="expertise-card">
-      <span class="card-icon">📊</span>
-      <div class="card-title">Business Intelligence</div>
-      <p class="card-desc">Power BI dashboards with advanced DAX, Tableau visualisations, and self-service analytics systems that give stakeholders real-time clarity.</p>
-    </div>
-    <div class="expertise-card">
-      <span class="card-icon">⚙️</span>
-      <div class="card-title">Machine Learning Engineering</div>
-      <p class="card-desc">End-to-end ML pipelines using Python, Scikit-learn, TensorFlow, and PyTorch — from feature engineering to model deployment on AWS and GCP.</p>
-    </div>
-    <div class="expertise-card">
-      <span class="card-icon">🗄️</span>
-      <div class="card-title">Data Architecture & SQL</div>
-      <p class="card-desc">Relational and cloud data modelling with PostgreSQL and BigQuery. Writing efficient queries and designing schemas that scale with your organisation.</p>
-    </div>
-    <div class="expertise-card">
-      <span class="card-icon">📈</span>
-      <div class="card-title">Digital & Product Analytics</div>
-      <p class="card-desc">Web and product analytics using GA4, behavioural data modelling, and funnel analysis — turning user events into strategic product decisions.</p>
-    </div>
-    <div class="expertise-card">
-      <span class="card-icon">🤝</span>
-      <div class="card-title">Stakeholder Communication</div>
-      <p class="card-desc">Translating complex models into plain language. Presenting findings to executive audiences, writing technical documentation, and enabling data-literate teams.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- ABOUT STRIP -->
-<div class="about-strip" id="about">
-  <div class="fade-up">
-    <div class="section-label">About Me</div>
-    <h2 class="section-title">Data professional with a passion for intelligent systems.</h2>
-    <p>I'm Immanuel Obani — a Data Scientist and Business Analyst based in Bradford, UK. I hold an MSc in Big Data Science & Technology with Distinction from the University of Bradford and a Google Advanced Data Analytics certification.</p>
-    <p>My work spans machine learning, NLP, cloud data platforms, and business intelligence. I've delivered data solutions at organisations including TiiQu UK, Afrikindness UK, and Spaceorbs Enterprise — always focused on insight that drives action.</p>
-    <a href="https://github.com/immanuelobani" target="_blank" class="btn-outline">View GitHub Profile</a>
-  </div>
-  <div class="fade-up">
-    <div class="section-label" style="margin-top:0">Technical Stack</div>
-    <div class="skills-list">
-      <span class="skill-tag">Python · Pandas</span>
-      <span class="skill-tag">Scikit-learn</span>
-      <span class="skill-tag">TensorFlow · PyTorch</span>
-      <span class="skill-tag">NLP · BERTopic</span>
-      <span class="skill-tag">SQL · PostgreSQL</span>
-      <span class="skill-tag">BigQuery · GCP</span>
-      <span class="skill-tag">Power BI · DAX</span>
-      <span class="skill-tag">Tableau</span>
-      <span class="skill-tag">AWS</span>
-      <span class="skill-tag">Advanced Excel</span>
-    </div>
-  </div>
-</div>
-
-<!-- INSIGHTS -->
-<section class="insights" id="insights">
-  <div class="insights-header">
-    <div>
-      <div class="section-label">Thought Leadership</div>
-      <h2 class="section-title">Latest Insights</h2>
-    </div>
-    <a href="#" class="insights-link">All Articles</a>
-  </div>
-
-  <div class="blog-grid fade-up">
-    <div class="blog-card">
-      <div class="blog-tag">NLP · Jan 2025</div>
-      <div class="blog-title">Why BERTopic Beats LDA for Modern Text Analysis</div>
-      <p class="blog-desc">A practical comparison of topic modelling approaches — and when to choose contextual embeddings over probabilistic models.</p>
-      <a href="#" class="blog-read">Read Article</a>
-    </div>
-    <div class="blog-card">
-      <div class="blog-tag">Analytics · Dec 2024</div>
-      <div class="blog-title">Building Power BI Dashboards That Executives Actually Use</div>
-      <p class="blog-desc">From DAX to design — the principles behind dashboards that get opened every Monday morning, not just at quarter-end.</p>
-      <a href="#" class="blog-read">Read Article</a>
-    </div>
-    <div class="blog-card">
-      <div class="blog-tag">ML Engineering · Nov 2024</div>
-      <div class="blog-title">End-to-End ML on Google Cloud: A Practical Walkthrough</div>
-      <p class="blog-desc">Deploying a Scikit-learn pipeline from notebook to BigQuery to production — without the DevOps headache.</p>
-      <a href="#" class="blog-read">Read Article</a>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="cta-inner fade-up">
-    <div>
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Ready to work together?</h2>
-      <p>Whether you're looking for a data scientist, need a senior analyst, or want to discuss a project — I'd love to hear from you.</p>
-    </div>
-    <div class="cta-buttons">
-      <a href="mailto:immanuelobani@gmail.com" class="btn-primary" style="text-align:center">Send an Email</a>
-      <a href="https://linkedin.com/in/immanuelobani" target="_blank" class="btn-outline" style="text-align:center">LinkedIn Profile</a>
-      <a href="https://github.com/immanuelobani" target="_blank" class="btn-outline" style="text-align:center">GitHub Projects</a>
+    <div class="reveal reveal-delay-2">
+      <div class="commission-panel">
+        <div class="commission-panel-title">Commission Info</div>
+        <div class="commission-row">
+          <span class="cr-label">Status</span>
+          <span class="cr-val open"><span class="status-dot"></span>Open</span>
+        </div>
+        <div class="commission-row">
+          <span class="cr-label">Available Work</span>
+          <span class="cr-val">Vector · Digital Portrait · Concept Art</span>
+        </div>
+        <div class="commission-row">
+          <span class="cr-label">Custom Commissions</span>
+          <span class="cr-val">Welcome</span>
+        </div>
+        <div class="commission-row">
+          <span class="cr-label">Exhibition Enquiries</span>
+          <span class="cr-val">Welcome</span>
+        </div>
+        <div class="commission-row">
+          <span class="cr-label">Based In</span>
+          <span class="cr-val">Bradford, West Yorkshire, UK</span>
+        </div>
+        <div class="commission-row" style="border-bottom:none">
+          <span class="cr-label">Email</span>
+          <span class="cr-val"><a href="mailto:immanuelobani@gmail.com" style="color:var(--amber);text-decoration:none">immanuelobani@gmail.com</a></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
+  <div class="footer-main">
     <div>
-      <div class="footer-brand">Immanuel<span>.</span></div>
-      <p class="footer-tagline">Transforming raw data into intelligent systems and actionable insight. Data Scientist · Bradford, UK.</p>
+      <div class="footer-brand">Immanuel<span> The Artist</span></div>
+      <p class="footer-tagline">Visual artist and illustrator. Vector art, digital portraiture, concept art. Bradford, UK. Open for commissions.</p>
       <div class="footer-socials">
-        <a href="https://linkedin.com/in/immanuelobani" target="_blank">LinkedIn</a>
-        <a href="https://github.com/immanuelobani" target="_blank">GitHub</a>
+        <a href="https://behance.net/immanuelobani" target="_blank" class="footer-social">Behance</a>
+        <a href="https://www.instagram.com/immanueltheartist/" target="_blank" class="footer-social">Instagram</a>
+        <a href="https://linkedin.com/in/immanuelobani" target="_blank" class="footer-social">LinkedIn</a>
+        <a href="mailto:immanuelobani@gmail.com" class="footer-social">Email</a>
       </div>
     </div>
     <div class="footer-col">
-      <h4>Navigate</h4>
+      <h5>Navigate</h5>
       <ul>
-        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#insights">Insights</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#statement">Statement</a></li>
+        <li><a href="#commissions">Commissions</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Services</h4>
+      <h5>Find the Work</h5>
       <ul>
-        <li><a href="#contact">Data Science Consulting</a></li>
-        <li><a href="#contact">ML Engineering</a></li>
-        <li><a href="#contact">BI & Dashboards</a></li>
-        <li><a href="#contact">Analytics Advisory</a></li>
+        <li><a href="https://behance.net/immanuelobani" target="_blank">Behance Portfolio</a></li>
+        <li><a href="https://www.instagram.com/immanueltheartist/" target="_blank">@immanueltheartist</a></li>
+        <li><a href="https://immanuelobani.com" target="_blank">immanuelobani.com</a></li>
+        <li><a href="mailto:immanuelobani@gmail.com">immanuelobani@gmail.com</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Immanuel Obani</span>
-    <span>immanuelobani@gmail.com</span>
+    <span>© 2025 Immanuel Obani · Immanuel The Artist</span>
+    <a href="https://immanuelobani.com" target="_blank">Data Science Portfolio →</a>
   </div>
 </footer>
 
 <script>
-  // Scroll-triggered fade-ins
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive: true});
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
