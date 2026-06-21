@@ -9,17 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --ink:       #110d08;
-  --soil:      #1e150c;
-  --ember:     #b8621a;
-  --amber:     #d4883c;
-  --gold:      #e8b96a;
-  --cream:     #f5ead6;
-  --linen:     #ede1c8;
-  --parch:     #e5d3b0;
-  --dusk:      #8a6e52;
-  --mist:      #bda888;
-  --rule:      rgba(184,98,26,0.18);
+  --ink:       #06090f;
+  --soil:      #0c1220;
+  --ember:     #5b8cff;
+  --amber:     #7eb3ff;
+  --gold:      #a8d4ff;
+  --cream:     #edf2fc;
+  --linen:     #dde6f7;
+  --parch:     #ccd8f0;
+  --dusk:      #4a5d80;
+  --mist:      #7a94bc;
+  --rule:      rgba(91,140,255,0.18);
+  --teal:      #00c9b1;
+  --violet:    #9b6bff;
+  --rose:      #ff6b9d;
+  --hero-bg:   #080e1c;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -35,7 +39,7 @@ nav{
   transition:background 0.4s,backdrop-filter 0.4s;
 }
 nav.scrolled{
-  background:rgba(245,234,214,0.94);
+  background:rgba(237,242,252,0.95);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--rule);
 }
@@ -67,31 +71,25 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 /* ════ HERO ════ */
 .hero{
   min-height:100vh;position:relative;overflow:hidden;
-  background:var(--soil);
+  background:#080e1c;
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 6vw 4rem;
 }
 
-/* grain texture via SVG filter */
-.hero-grain{
-  position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-  opacity:0.6;
-}
-
-/* warm gradient washes */
+/* digital art canvas wash — layered colour bleeds */
 .hero-wash{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    radial-gradient(ellipse 80% 60% at 15% 90%, rgba(184,98,26,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 70% at 85% 10%, rgba(30,21,12,0.7) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 70% 75%, rgba(212,136,60,0.1) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 55% at 10% 85%, rgba(0,201,177,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 88% 12%, rgba(155,107,255,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 55% 60%, rgba(91,140,255,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 30% at 30% 25%, rgba(255,107,157,0.08) 0%, transparent 45%);
 }
 
-/* floating SVG ornament — top right */
+/* floating SVG ornament */
 .hero-ornament{
-  position:absolute;top:8rem;right:6vw;z-index:2;
-  width:clamp(180px,22vw,340px);opacity:0.18;
+  position:absolute;inset:0;z-index:2;
+  width:100%;height:100%;
   pointer-events:none;
 }
 
@@ -170,10 +168,10 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 
 /* ════ INTRO BAND ════ */
 .intro-band{
-  background:var(--ink);
+  background:#080e1c;
   padding:1.5rem 6vw;
   display:flex;align-items:center;gap:4rem;overflow:hidden;
-  border-top:1px solid rgba(184,98,26,0.3);
+  border-top:1px solid rgba(91,140,255,0.25);
 }
 .intro-band-item{
   display:flex;align-items:center;gap:1rem;white-space:nowrap;flex-shrink:0;
@@ -232,7 +230,7 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 
 /* ════ GALLERY ════ */
 .gallery-sec{
-  background:var(--ink);
+  background:#080e1c;
   padding:6rem 6vw;
 }
 .sec-header{
@@ -379,7 +377,7 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 
 /* ════ STATEMENT ════ */
 .statement-sec{
-  background:var(--soil);
+  background:#0c1220;
   padding:9rem 6vw;
   position:relative;overflow:hidden;
 }
@@ -387,14 +385,14 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
   position:absolute;left:-3rem;top:4rem;
   font-family:'Cormorant Garamond',serif;
   font-size:30rem;font-weight:700;font-style:italic;
-  color:rgba(212,136,60,0.04);line-height:1;
+  color:rgba(91,140,255,0.05);line-height:1;
   user-select:none;pointer-events:none;
 }
 .statement-ornament-right{
   position:absolute;right:-2rem;bottom:-2rem;
   font-family:'Cormorant Garamond',serif;
   font-size:20rem;font-weight:700;
-  color:rgba(184,98,26,0.05);line-height:1;
+  color:rgba(0,201,177,0.05);line-height:1;
   user-select:none;pointer-events:none;
 }
 .statement-inner{
@@ -464,8 +462,9 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 
 /* Commission info panel — right side */
 .commission-panel{
-  background:var(--ink);
+  background:#080e1c;
   padding:3rem;
+  border:1px solid rgba(91,140,255,0.12);
 }
 .commission-panel-title{
   font-family:'Cormorant Garamond',serif;
@@ -498,9 +497,9 @@ nav.scrolled .nav-cta:hover{background:var(--ember);border-color:var(--ember);co
 
 /* ════ FOOTER ════ */
 footer{
-  background:var(--ink);
+  background:#080e1c;
   padding:5rem 6vw 2.5rem;
-  border-top:1px solid rgba(184,98,26,0.2);
+  border-top:1px solid rgba(91,140,255,0.15);
 }
 .footer-main{
   display:grid;grid-template-columns:2fr 1fr 1fr;gap:5rem;
@@ -603,26 +602,174 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-grain"></div>
   <div class="hero-wash"></div>
 
-  <!-- Floating Afrofuturist ornament SVG -->
-  <svg class="hero-ornament" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="170" cy="170" r="169" stroke="#d4883c" stroke-width="0.5"/>
-    <circle cx="170" cy="170" r="130" stroke="#d4883c" stroke-width="0.5"/>
-    <circle cx="170" cy="170" r="90" stroke="#d4883c" stroke-width="0.5"/>
-    <circle cx="170" cy="170" r="50" stroke="#d4883c" stroke-width="1"/>
-    <line x1="170" y1="1" x2="170" y2="339" stroke="#d4883c" stroke-width="0.5"/>
-    <line x1="1" y1="170" x2="339" y2="170" stroke="#d4883c" stroke-width="0.5"/>
-    <line x1="50" y1="50" x2="290" y2="290" stroke="#d4883c" stroke-width="0.3"/>
-    <line x1="290" y1="50" x2="50" y2="290" stroke="#d4883c" stroke-width="0.3"/>
-    <polygon points="170,80 200,140 170,120 140,140" fill="none" stroke="#d4883c" stroke-width="0.8"/>
-    <polygon points="170,260 200,200 170,220 140,200" fill="none" stroke="#d4883c" stroke-width="0.8"/>
-    <circle cx="170" cy="170" r="8" fill="#d4883c" fill-opacity="0.4"/>
-    <circle cx="170" cy="80" r="3" fill="#d4883c" fill-opacity="0.6"/>
-    <circle cx="170" cy="260" r="3" fill="#d4883c" fill-opacity="0.6"/>
-    <circle cx="80" cy="170" r="3" fill="#d4883c" fill-opacity="0.6"/>
-    <circle cx="260" cy="170" r="3" fill="#d4883c" fill-opacity="0.6"/>
+  <!-- ARTSY BACKGROUND — paintbrushes, palette, digital stylus, paint strokes, blobs -->
+  <svg class="hero-ornament" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="blur-soft"><feGaussianBlur stdDeviation="3"/></filter>
+      <filter id="blur-med"><feGaussianBlur stdDeviation="6"/></filter>
+      <filter id="blur-heavy"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+
+    <!-- ── PAINT BLOBS / SPLASHES (background layer) ── -->
+    <ellipse cx="1180" cy="120" rx="110" ry="70" fill="#9b6bff" opacity="0.09" filter="url(#blur-heavy)"/>
+    <ellipse cx="80" cy="750" rx="130" ry="80" fill="#00c9b1" opacity="0.1" filter="url(#blur-heavy)"/>
+    <ellipse cx="700" cy="80" rx="90" ry="55" fill="#5b8cff" opacity="0.08" filter="url(#blur-heavy)"/>
+    <ellipse cx="1350" cy="680" rx="100" ry="65" fill="#ff6b9d" opacity="0.07" filter="url(#blur-heavy)"/>
+    <ellipse cx="280" cy="180" rx="60" ry="40" fill="#00c9b1" opacity="0.07" filter="url(#blur-med)"/>
+
+    <!-- Paint drips top right -->
+    <path d="M1260 0 Q1262 40 1258 80 Q1256 110 1262 140 Q1264 160 1260 190" stroke="#9b6bff" stroke-width="6" fill="none" opacity="0.18" stroke-linecap="round"/>
+    <ellipse cx="1260" cy="196" rx="7" ry="9" fill="#9b6bff" opacity="0.18"/>
+    <path d="M1300 0 Q1304 55 1298 100 Q1294 130 1300 155" stroke="#5b8cff" stroke-width="4" fill="none" opacity="0.14" stroke-linecap="round"/>
+    <ellipse cx="1300" cy="160" rx="5" ry="7" fill="#5b8cff" opacity="0.14"/>
+    <path d="M1340 0 Q1336 35 1342 65 Q1346 88 1340 108" stroke="#ff6b9d" stroke-width="3.5" fill="none" opacity="0.13" stroke-linecap="round"/>
+    <ellipse cx="1340" cy="113" rx="4.5" ry="6" fill="#ff6b9d" opacity="0.13"/>
+
+    <!-- Paint drips bottom left -->
+    <path d="M60 900 Q58 860 64 820 Q66 795 60 768" stroke="#00c9b1" stroke-width="5" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <ellipse cx="60" cy="763" rx="6" ry="8" fill="#00c9b1" opacity="0.15"/>
+    <path d="M100 900 Q104 848 98 808 Q94 782 100 760" stroke="#9b6bff" stroke-width="3.5" fill="none" opacity="0.12" stroke-linecap="round"/>
+    <ellipse cx="100" cy="755" rx="4.5" ry="6" fill="#9b6bff" opacity="0.12"/>
+
+    <!-- ── LARGE PAINTBRUSH — upper right, angled ── -->
+    <g transform="translate(1050,30) rotate(38)">
+      <!-- handle -->
+      <rect x="-6" y="0" width="12" height="240" rx="4" fill="#1a2540" stroke="#2a3d66" stroke-width="1" opacity="0.9"/>
+      <!-- metal ferrule -->
+      <rect x="-7" y="232" width="14" height="22" rx="2" fill="#3a4f7a" stroke="#4a6090" stroke-width="0.8" opacity="0.9"/>
+      <!-- bristles -->
+      <path d="M-7 254 Q-10 280 -6 308 Q-3 326 0 340 Q3 326 6 308 Q10 280 7 254 Z" fill="#5b8cff" opacity="0.55"/>
+      <path d="M-3 258 Q-4 285 -1 312 Q0 328 0 340 Q1 328 1 312 Q4 285 3 258 Z" fill="#a8d4ff" opacity="0.35"/>
+      <!-- wet paint tip drip -->
+      <path d="M0 340 Q1 355 0 370" stroke="#5b8cff" stroke-width="2.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+      <ellipse cx="0" cy="373" rx="3.5" ry="5" fill="#5b8cff" opacity="0.35"/>
+    </g>
+
+    <!-- ── PAINTBRUSH 2 — left side, steep angle ── -->
+    <g transform="translate(120,200) rotate(-25)">
+      <rect x="-5" y="0" width="10" height="200" rx="3" fill="#1a2540" stroke="#2a3d66" stroke-width="1" opacity="0.85"/>
+      <rect x="-6" y="193" width="12" height="18" rx="2" fill="#3a4f7a" stroke="#4a6090" stroke-width="0.8" opacity="0.85"/>
+      <path d="M-6 211 Q-8 233 -5 256 Q-2 270 0 282 Q2 270 5 256 Q8 233 6 211 Z" fill="#00c9b1" opacity="0.5"/>
+      <path d="M-2 215 Q-2 238 0 260 Q0 272 0 282 Q0 272 0 260 Q2 238 2 215 Z" fill="#a8d4ff" opacity="0.3"/>
+      <path d="M0 282 Q-1 295 0 308" stroke="#00c9b1" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+      <ellipse cx="0" cy="311" rx="3" ry="4.5" fill="#00c9b1" opacity="0.35"/>
+    </g>
+
+    <!-- ── FLAT BRUSH — bottom right ── -->
+    <g transform="translate(1280,600) rotate(-55)">
+      <rect x="-5" y="0" width="10" height="180" rx="3" fill="#1a2540" stroke="#2a3d66" stroke-width="1" opacity="0.8"/>
+      <rect x="-7" y="174" width="14" height="16" rx="2" fill="#3a4f7a" opacity="0.8"/>
+      <!-- flat bristles -->
+      <rect x="-12" y="190" width="24" height="55" rx="1" fill="#9b6bff" opacity="0.45"/>
+      <rect x="-8" y="193" width="16" height="52" rx="1" fill="#c4a6ff" opacity="0.25"/>
+      <!-- flat brush paint smear -->
+      <path d="M-12 245 Q-20 260 -8 268 Q0 272 12 265 Q22 258 12 245 Z" fill="#9b6bff" opacity="0.2" filter="url(#blur-soft)"/>
+    </g>
+
+    <!-- ── DIGITAL STYLUS / TABLET PEN — centre upper ── -->
+    <g transform="translate(780,40) rotate(15)">
+      <!-- pen body — sleek dark cylinder -->
+      <rect x="-4" y="0" width="8" height="160" rx="4" fill="#1c2840" stroke="#2e4070" stroke-width="0.8" opacity="0.95"/>
+      <!-- button ridge -->
+      <rect x="-4.5" y="55" width="9" height="5" rx="2" fill="#3a5090" opacity="0.9"/>
+      <rect x="-4.5" y="65" width="9" height="5" rx="2" fill="#3a5090" opacity="0.9"/>
+      <!-- logo band -->
+      <rect x="-4" y="80" width="8" height="2" fill="#5b8cff" opacity="0.6"/>
+      <!-- nib taper -->
+      <path d="M-4 156 Q-2 168 0 178 Q2 168 4 156 Z" fill="#c8d8f8" opacity="0.9"/>
+      <!-- nib tip glow -->
+      <ellipse cx="0" cy="178" rx="2" ry="2" fill="#ffffff" opacity="0.8"/>
+      <ellipse cx="0" cy="178" rx="5" ry="5" fill="#5b8cff" opacity="0.3" filter="url(#blur-soft)"/>
+      <!-- digital stroke emitting from tip -->
+      <path d="M0 180 C10 200 -15 230 5 260 C20 285 -10 310 8 335" stroke="#5b8cff" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M0 180 C-8 205 12 235 -5 262" stroke="#00c9b1" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round" stroke-dasharray="3 4"/>
+    </g>
+
+    <!-- ── PAINT PALETTE (simplified circular) — right middle ── -->
+    <g transform="translate(1360,350)" opacity="0.22">
+      <!-- palette body -->
+      <ellipse cx="0" cy="0" rx="75" ry="65" fill="#1a2540" stroke="#2a3d66" stroke-width="1.5"/>
+      <!-- thumb hole -->
+      <ellipse cx="-28" cy="18" rx="14" ry="12" fill="#080e1c"/>
+      <!-- paint dabs -->
+      <circle cx="28" cy="-32" r="11" fill="#ff6b9d"/>
+      <circle cx="48" cy="0" r="10" fill="#9b6bff"/>
+      <circle cx="38" cy="32" r="10" fill="#5b8cff"/>
+      <circle cx="5" cy="48" r="10" fill="#00c9b1"/>
+      <circle cx="-22" cy="42" r="9" fill="#ffcc44"/>
+      <circle cx="-42" cy="14" r="9" fill="#5b8cff"/>
+      <!-- mixed smear in centre -->
+      <ellipse cx="10" cy="5" rx="18" ry="12" fill="#9b6bff" opacity="0.4" filter="url(#blur-soft)"/>
+    </g>
+
+    <!-- ── SCATTERED PAINT SPLATTERS ── -->
+    <!-- top left cluster -->
+    <circle cx="195" cy="95" r="4" fill="#00c9b1" opacity="0.35"/>
+    <circle cx="205" cy="88" r="2.5" fill="#5b8cff" opacity="0.3"/>
+    <circle cx="188" cy="108" r="3" fill="#9b6bff" opacity="0.28"/>
+    <circle cx="215" cy="100" r="2" fill="#ff6b9d" opacity="0.3"/>
+    <circle cx="200" cy="118" r="1.5" fill="#00c9b1" opacity="0.25"/>
+    <!-- right mid cluster -->
+    <circle cx="1160" cy="430" r="5" fill="#ff6b9d" opacity="0.3"/>
+    <circle cx="1172" cy="420" r="3" fill="#9b6bff" opacity="0.28"/>
+    <circle cx="1150" cy="445" r="2.5" fill="#5b8cff" opacity="0.25"/>
+    <circle cx="1178" cy="440" r="2" fill="#00c9b1" opacity="0.25"/>
+    <!-- bottom centre cluster -->
+    <circle cx="620" cy="780" r="4" fill="#9b6bff" opacity="0.28"/>
+    <circle cx="632" cy="770" r="2.5" fill="#ff6b9d" opacity="0.25"/>
+    <circle cx="610" cy="790" r="3" fill="#5b8cff" opacity="0.22"/>
+
+    <!-- ── EXPRESSIVE PAINT STROKES ── -->
+    <!-- wide swoosh upper left -->
+    <path d="M-20 320 C80 280 200 340 320 295 C420 255 500 310 580 280"
+      stroke="#00c9b1" stroke-width="18" fill="none" opacity="0.07" stroke-linecap="round" filter="url(#blur-soft)"/>
+    <path d="M-20 320 C80 280 200 340 320 295 C420 255 500 310 580 280"
+      stroke="#00c9b1" stroke-width="4" fill="none" opacity="0.12" stroke-linecap="round"/>
+
+    <!-- arc stroke right -->
+    <path d="M1100 500 C1160 450 1230 480 1280 440 C1330 400 1380 420 1440 390"
+      stroke="#9b6bff" stroke-width="14" fill="none" opacity="0.08" stroke-linecap="round" filter="url(#blur-soft)"/>
+    <path d="M1100 500 C1160 450 1230 480 1280 440 C1330 400 1380 420 1440 390"
+      stroke="#9b6bff" stroke-width="3" fill="none" opacity="0.14" stroke-linecap="round"/>
+
+    <!-- diagonal swipe lower -->
+    <path d="M200 820 C350 780 500 830 660 800 C800 772 920 815 1050 790"
+      stroke="#5b8cff" stroke-width="22" fill="none" opacity="0.06" stroke-linecap="round" filter="url(#blur-soft)"/>
+    <path d="M200 820 C350 780 500 830 660 800 C800 772 920 815 1050 790"
+      stroke="#5b8cff" stroke-width="3.5" fill="none" opacity="0.1" stroke-linecap="round"/>
+
+    <!-- short energetic strokes -->
+    <path d="M420 140 C445 128 480 138 500 128" stroke="#ff6b9d" stroke-width="5" fill="none" opacity="0.22" stroke-linecap="round"/>
+    <path d="M430 155 C460 148 490 155 510 145" stroke="#ff6b9d" stroke-width="3" fill="none" opacity="0.15" stroke-linecap="round"/>
+    <path d="M860 680 C890 668 930 675 955 662" stroke="#ffcc44" stroke-width="4" fill="none" opacity="0.18" stroke-linecap="round"/>
+    <path d="M870 695 C900 686 935 692 958 680" stroke="#ffcc44" stroke-width="2.5" fill="none" opacity="0.12" stroke-linecap="round"/>
+
+    <!-- ── TABLET / SCREEN GLOW suggestion ── -->
+    <rect x="30" y="400" width="140" height="100" rx="8" fill="none" stroke="#5b8cff" stroke-width="1" opacity="0.12"/>
+    <rect x="36" y="406" width="128" height="88" rx="6" fill="#5b8cff" opacity="0.04"/>
+    <!-- screen scan lines -->
+    <line x1="36" y1="422" x2="164" y2="422" stroke="#5b8cff" stroke-width="0.5" opacity="0.1"/>
+    <line x1="36" y1="438" x2="164" y2="438" stroke="#5b8cff" stroke-width="0.5" opacity="0.1"/>
+    <line x1="36" y1="454" x2="164" y2="454" stroke="#5b8cff" stroke-width="0.5" opacity="0.1"/>
+    <line x1="36" y1="470" x2="164" y2="470" stroke="#5b8cff" stroke-width="0.5" opacity="0.1"/>
+    <!-- colour picker circle on screen -->
+    <circle cx="100" cy="450" r="22" fill="none" stroke="#00c9b1" stroke-width="1" opacity="0.2"/>
+    <circle cx="100" cy="450" r="3" fill="#00c9b1" opacity="0.3"/>
+
+    <!-- ── COLOUR SWATCHES — scattered ── -->
+    <rect x="1380" y="180" width="28" height="20" rx="3" fill="#00c9b1" opacity="0.2"/>
+    <rect x="1380" y="205" width="28" height="20" rx="3" fill="#9b6bff" opacity="0.2"/>
+    <rect x="1380" y="230" width="28" height="20" rx="3" fill="#5b8cff" opacity="0.2"/>
+    <rect x="1380" y="255" width="28" height="20" rx="3" fill="#ff6b9d" opacity="0.2"/>
+
+    <!-- ── FINE DETAIL: small scattered dots ── -->
+    <circle cx="500" cy="55" r="2" fill="#9b6bff" opacity="0.25"/>
+    <circle cx="520" cy="48" r="1.5" fill="#5b8cff" opacity="0.2"/>
+    <circle cx="490" cy="68" r="1.5" fill="#00c9b1" opacity="0.22"/>
+    <circle cx="960" cy="820" r="2.5" fill="#ff6b9d" opacity="0.22"/>
+    <circle cx="975" cy="812" r="1.5" fill="#9b6bff" opacity="0.18"/>
   </svg>
 
   <div class="hero-content">
@@ -633,9 +780,9 @@ footer{
 
     <!-- Brushstroke SVG -->
     <svg class="hero-stroke" viewBox="0 0 900 22" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M3 11 C60 5, 150 17, 280 9 C390 3, 510 16, 650 8 C760 2, 840 14, 897 11" stroke="#b8621a" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
-      <path d="M8 15 C100 9, 240 18, 420 13 C580 8, 730 16, 893 13" stroke="#d4883c" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
-      <path d="M15 9 C80 6, 180 13, 350 8" stroke="#e8b96a" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+      <path d="M3 11 C60 5, 150 17, 280 9 C390 3, 510 16, 650 8 C760 2, 840 14, 897 11" stroke="#5b8cff" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+      <path d="M8 15 C100 9, 240 18, 420 13 C580 8, 730 16, 893 13" stroke="#7eb3ff" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+      <path d="M15 9 C80 6, 180 13, 350 8" stroke="#00c9b1" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
     </svg>
 
     <div class="hero-body">
