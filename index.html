@@ -24,18 +24,17 @@
   .masthead{
     background:var(--terracotta); color:var(--cream);
     padding:18px 28px; display:flex; justify-content:space-between; align-items:center;
-    border-bottom:4px solid var(--gold);
+  }
+  .ankara-strip{
+    height:44px; width:100%;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2244%22%20height%3D%2244%22%20viewBox%3D%220%200%2044%2044%22%3E%20%3Crect%20width%3D%2244%22%20height%3D%2244%22%20fill%3D%22rgb%28193%2C68%2C14%29%22/%3E%20%3Cpath%20d%3D%22M22%202%20L42%2022%20L22%2042%20L2%2022%20Z%22%20fill%3D%22rgb%28217%2C164%2C65%29%22/%3E%20%3Cpath%20d%3D%22M22%2010%20L34%2022%20L22%2034%20L10%2022%20Z%22%20fill%3D%22rgb%2835%2C26%2C18%29%22/%3E%20%3Ccircle%20cx%3D%2222%22%20cy%3D%2222%22%20r%3D%225%22%20fill%3D%22rgb%2843%2C63%2C122%29%22/%3E%20%3Cpath%20d%3D%22M0%200%20L10%200%20L0%2010%20Z%22%20fill%3D%22rgb%28217%2C164%2C65%29%22/%3E%20%3Cpath%20d%3D%22M44%200%20L34%200%20L44%2010%20Z%22%20fill%3D%22rgb%28217%2C164%2C65%29%22/%3E%20%3Cpath%20d%3D%22M0%2044%20L10%2044%20L0%2034%20Z%22%20fill%3D%22rgb%28217%2C164%2C65%29%22/%3E%20%3Cpath%20d%3D%22M44%2044%20L34%2044%20L44%2034%20Z%22%20fill%3D%22rgb%28217%2C164%2C65%29%22/%3E%20%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 44px 44px;
   }
   .masthead .brand{font-weight:700; font-size:20px; letter-spacing:0.02em;}
   .masthead nav ul{list-style:none; display:flex; gap:26px;}
   .masthead nav a{text-decoration:none; color:var(--cream); font-size:13px; text-transform:uppercase; letter-spacing:0.08em;}
   .masthead nav a:hover{color:var(--gold);}
-
-  .issue-strip{
-    background:var(--ink); color:var(--gold);
-    font-family:'Space Grotesk', sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
-    padding:8px 28px; text-align:center;
-  }
 
   .hero{
     max-width:1180px; margin:0 auto; padding:64px 28px 40px;
@@ -130,7 +129,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul></nav>
 </div>
-<div class="issue-strip">Field Notes — Bradford Edition — Vol. 01</div>
+<div class="ankara-strip" aria-hidden="true"></div>
 
 <header class="hero">
   <div>
