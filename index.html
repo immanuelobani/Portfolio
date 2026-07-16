@@ -48,6 +48,8 @@
   .hero .issue-box{
     border:2px solid var(--ink); padding:22px; font-family:'Space Grotesk', sans-serif;
   }
+  .issue-col{display:flex; flex-direction:column; gap:20px;}
+  .tools-sketch{width:100%; max-width:280px; height:auto; opacity:0.9;}
   .hero .issue-box div{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line); font-size:13px;}
   .hero .issue-box div:last-child{border-bottom:none;}
   .hero .issue-box span{color:var(--terracotta); text-transform:uppercase; font-size:11px; letter-spacing:0.06em;}
@@ -136,54 +138,77 @@
     <h1>Carrying Heritage Into Afrofuturist Portraiture</h1>
     <p class="dek">Acrylic, charcoal, and digital media, built into portraits that pull adire indigo, Akan goldweight, and mudcloth geometry into everyday Black life.</p>
   </div>
-  <div class="issue-box">
-    <div><span>Practice</span> Painting · Drawing · Digital</div>
-    <div><span>Focus</span> Afrofuturist Portraiture</div>
-    <div><span>Rooted In</span> West African Heritage</div>
-    <div><span>Based</span> Bradford, UK</div>
+  <div class="issue-col">
+    <svg class="tools-sketch" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- easel -->
+      <path d="M40 178 L100 40 L160 178" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M55 140 L145 140" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M100 40 L100 10" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- canvas on easel -->
+      <rect x="62" y="70" width="76" height="58" fill="none" stroke="var(--terracotta)" stroke-width="2.5"/>
+      <path d="M70 118 C 85 100, 95 112, 108 96 C 118 84, 128 100, 132 92" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <!-- palette -->
+      <path d="M172 150 C 155 150, 150 132, 165 122 C 182 111, 210 116, 214 134 C 217 148, 202 154, 196 148 C 192 144, 186 150, 178 150 Z" fill="none" stroke="var(--ink)" stroke-width="2.5"/>
+      <circle cx="178" cy="132" r="4" fill="var(--terracotta)"/>
+      <circle cx="192" cy="126" r="4" fill="var(--gold)"/>
+      <circle cx="203" cy="136" r="4" fill="var(--indigo)"/>
+      <!-- brushes -->
+      <path d="M210 118 L232 84" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M232 84 L238 72" stroke="var(--terracotta)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M222 122 L248 100" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M248 100 L256 90" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+      <!-- charcoal stick -->
+      <rect x="18" y="150" width="34" height="9" rx="3" transform="rotate(-18 18 150)" fill="none" stroke="var(--ink)" stroke-width="2"/>
+    </svg>
+    <div class="issue-box">
+      <div><span>Practice</span> Painting · Drawing · Digital</div>
+      <div><span>Focus</span> Afrofuturist Portraiture</div>
+      <div><span>Rooted In</span> West African Heritage</div>
+      <div><span>Based</span> Bradford, UK</div>
+    </div>
   </div>
 </header>
 
 <div class="section-band" id="stories-head">
   <h2>Selected Works</h2>
-  <div class="no">Stories 01 — 04</div>
+  <div class="no">Plates 01 — 04</div>
 </div>
 
 <section class="spread" id="stories">
   <article class="story">
     <div class="story-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/89d50a252821863.6a58c518b695b.jpg" alt="BEYOND THE GAZE" loading="lazy"></div>
     <div class="story-text">
-      <div class="dropcap-label">Story 01 — Latest</div>
+      <div class="dropcap-label">Plate 01 — Latest</div>
       <h3>BEYOND THE GAZE</h3>
       <p>Portraiture that looks past the surface of how Black subjects are usually seen.</p>
-      <a href="https://www.behance.net/gallery/252821863/BEYOND-THE-GAZE" target="_blank" rel="noopener">Read the full story →</a>
+      <a href="https://www.behance.net/gallery/252821863/BEYOND-THE-GAZE" target="_blank" rel="noopener">View on Behance →</a>
     </div>
   </article>
   <article class="story">
     <div class="story-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/ce8563252778693.6a57b981903a0.jpg" alt="Pulse of Progress" loading="lazy"></div>
     <div class="story-text">
-      <div class="dropcap-label">Story 02</div>
+      <div class="dropcap-label">Plate 02</div>
       <h3>Pulse of Progress</h3>
       <p>Humanity, nature, and sustainable development held in a single frame.</p>
-      <a href="https://www.behance.net/gallery/252778693/Pulse-of-Progress" target="_blank" rel="noopener">Read the full story →</a>
+      <a href="https://www.behance.net/gallery/252778693/Pulse-of-Progress" target="_blank" rel="noopener">View on Behance →</a>
     </div>
   </article>
   <article class="story">
     <div class="story-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/3798ba252778587.6a57b936922fd.jpg" alt="Where roots remember" loading="lazy"></div>
     <div class="story-text">
-      <div class="dropcap-label">Story 03</div>
+      <div class="dropcap-label">Plate 03</div>
       <h3>Where roots remember</h3>
       <p>Ancestry and memory, held in soil, branch, and skin.</p>
-      <a href="https://www.behance.net/gallery/252778587/Where-roots-remember" target="_blank" rel="noopener">Read the full story →</a>
+      <a href="https://www.behance.net/gallery/252778587/Where-roots-remember" target="_blank" rel="noopener">View on Behance →</a>
     </div>
   </article>
   <article class="story">
     <div class="story-img"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/1a143e251538733.6a3952acc80c5.jpg" alt="The Bloom That Chose Its Own Colour" loading="lazy"></div>
     <div class="story-text">
-      <div class="dropcap-label">Story 04</div>
+      <div class="dropcap-label">Plate 04</div>
       <h3>The Bloom That Chose Its Own Colour</h3>
       <p>Colour and form worked into a single, self-possessed image.</p>
-      <a href="https://www.behance.net/gallery/251538733/The-Bloom-That-Chose-Its-Own-Colour" target="_blank" rel="noopener">Read the full story →</a>
+      <a href="https://www.behance.net/gallery/251538733/The-Bloom-That-Chose-Its-Own-Colour" target="_blank" rel="noopener">View on Behance →</a>
     </div>
   </article>
 </section>
